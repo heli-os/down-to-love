@@ -1,0 +1,36 @@
+@startuml overall-architecture
+left to right direction
+' actor
+package User {
+  actor "Authorization User" as AU
+  actor "Unauthorization User" as UAU
+}
+package Administrator {
+  actor Operator as OP
+  actor Developer as DEV
+}
+' usecase
+usecase "Google Authorization" as GAUTH
+package GoogleCalendar {
+  usecase "Show synchronized calendar" as GC1
+  usecase "Modify managed calendar list" as GC2
+  usecase "Request synchronize calendar" as GC3
+}
+package GoogleMap {
+  usecase "Show shared map" as GM1
+}
+package Memo {
+  usecase "Show written memo" as M1
+  usecase "Write a memo" as M2
+}
+
+UAU --> GAUTH
+
+AU --> GC1
+AU --> GC3
+AU --> GM1
+AU --> M1
+AU --> M2
+
+OP --> GC2
+@enduml
