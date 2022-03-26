@@ -10,6 +10,7 @@ This project was launched to overcome the long distance relationship in the COVI
 
 - Google Calendar Sharing
 - Google Map Sharing
+- (TBD) Gallery Time lapse
 - Memo what we want to do together
 - Management a long-term timeline
 
