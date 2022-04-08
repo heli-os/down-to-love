@@ -1,10 +1,8 @@
 package kr.dataportal.with.api.domain.memo
 
+import kr.dataportal.with.port.`in`.CreateMemoUsecase
 import kr.dataportal.with.port.`in`.QueryWrittenMemoUsecase
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 /**
  * @Author Heli
@@ -12,8 +10,15 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/api/v1/memo")
 class MemoRestController(
+    private val createMemoUsecase: CreateMemoUsecase,
     private val queryWrittenMemoUsecase: QueryWrittenMemoUsecase
 ) {
+
+    @PostMapping
+    fun createMemo(@RequestBody request: CreateMemoRequest) {
+        val command = request.toCreateUsecaseCommand()
+        createMemoUsecase.command(command)
+    }
 
     @GetMapping("/{memoId}")
     fun queryWrittenMemo(@PathVariable memoId: Long): QueryMemoResponse? {
