@@ -7,4 +7,7 @@ pluginManagement {
 }
 rootProject.name = "down-to-love-backend"
 
-include("application-interface")
+include("application-webapp")
+include("application-core")
+include("application-usecase")
+include("application-data")
