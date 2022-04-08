@@ -1,3 +1,4 @@
 dependencies {
-    implementation(project(":application-domain"))
+    api(project(":application-core"))
+    api(project(":application-data"))
 }

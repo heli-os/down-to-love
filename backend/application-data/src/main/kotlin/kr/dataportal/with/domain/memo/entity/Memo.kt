@@ -7,5 +7,6 @@ import kr.dataportal.with.config.jpa.BaseEntity
  * @Author Heli
  */
 @Entity
-class Memo : BaseEntity() {
-}
+class Memo(
+    val content: String
+) : BaseEntity()

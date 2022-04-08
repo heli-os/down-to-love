@@ -9,4 +9,5 @@ rootProject.name = "down-to-love-backend"
 
 include("application-webapp")
 include("application-usecase")
-include("application-domain")
+include("application-data")
+include("application-core")
