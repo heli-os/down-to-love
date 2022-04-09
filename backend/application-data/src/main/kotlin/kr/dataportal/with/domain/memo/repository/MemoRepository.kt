@@ -6,5 +6,4 @@ import org.springframework.data.jpa.repository.JpaRepository
 /**
  * @Author Heli
  */
-interface MemoRepository : JpaRepository<Memo, Long> {
-}
+interface MemoRepository : JpaRepository<Memo, Long>

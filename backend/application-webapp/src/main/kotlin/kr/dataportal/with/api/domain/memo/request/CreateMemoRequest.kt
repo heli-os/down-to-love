@@ -1,4 +1,4 @@
-package kr.dataportal.with.api.domain.memo
+package kr.dataportal.with.api.domain.memo.request
 
 import kr.dataportal.with.memo.Memo
 import kr.dataportal.with.port.`in`.CreateMemoUsecase

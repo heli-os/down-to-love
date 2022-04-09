@@ -1,6 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
+    base
     id("org.springframework.boot") version "3.0.0-SNAPSHOT"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("jvm") version "1.6.20-RC2"
@@ -11,6 +13,7 @@ plugins {
 group = "kr.dataportal"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
 
 allprojects {
     repositories {
@@ -37,6 +40,12 @@ subprojects {
         runtimeOnly("mysql:mysql-connector-java")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
     }
+
+    val jar: Jar by tasks
+    val bootJar: BootJar by tasks
+
+    bootJar.enabled = false
+    jar.enabled = true
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {

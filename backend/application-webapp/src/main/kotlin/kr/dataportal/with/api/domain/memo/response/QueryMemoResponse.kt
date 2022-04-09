@@ -1,4 +1,4 @@
-package kr.dataportal.with.api.domain.memo
+package kr.dataportal.with.api.domain.memo.response
 
 import kr.dataportal.with.memo.Memo
 
